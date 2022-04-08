@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find ouster_ros)/citrack_ouster.launch">
+    <arg name="amiroID" value="7">
+  </include>
+</launch>
