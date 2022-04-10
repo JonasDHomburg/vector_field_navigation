@@ -17,7 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   cv_bridge
-  OpenCV
+#  OpenCV
   image_transport
 )
 
@@ -126,6 +126,8 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+#  ${QT_USE_FILE}
+#  ${OPENCV_INCLUDE_DIR}
 )
 
 ## Declare a C++ library
