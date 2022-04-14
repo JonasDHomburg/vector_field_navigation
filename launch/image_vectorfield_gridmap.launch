@@ -16,7 +16,7 @@
     <node pkg="vector_field_navigation" name="repeat_images" type="ImageBroadcaster.py" output="screen">
       <param name="topic" value="/image"/>
       <param name="delay" value="30"/>
-      <param name="path" value="$(find potential_field_navigation)/vectorfields"/>
+      <param name="path" value="$(find vector_field_navigation)/vectorfields"/>
     </node>
   </group>
 

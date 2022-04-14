@@ -10,6 +10,7 @@ set(CMAKE_AUTOMOC ON)
 find_package(OpenMP REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Boost REQUIRED COMPONENTS thread)
+find_package(OpenCV REQUIRED)
 find_package(catkin REQUIRED COMPONENTS
   amiro_description
   amiro_gazebo
@@ -26,7 +27,6 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   std_msgs
   cv_bridge
-  OpenCV
   image_transport
   )
 
