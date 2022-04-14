@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="calibration" type="dynamic_transform_publisher" name="tf_citrack_floor_vectorfield">
+        <param name="tf" value="0 0 0.01 -0.010199 0.0 1.570796"/>
+        <param name="source_frame" value="citrack/base_link"/>
+        <param name="target_frame" value="vectorfield"/>
+        <param name="rate" value="50.0"/>
+    </node>
+</launch>

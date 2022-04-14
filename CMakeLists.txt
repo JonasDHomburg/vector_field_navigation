@@ -214,3 +214,6 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+file(COPY "src/vectorfields" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
+file(COPY "launch" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
