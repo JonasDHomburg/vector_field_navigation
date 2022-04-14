@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="vectorfield_topic" default="image"/>
-    <include file="$(find vector_field_navigation/launch/amiroID_navigation.launch">
+    <include file="$(find vector_field_navigation)/launch/amiroID_navigation.launch">
         <arg name="amiroID" value="6"/>
         <arg name="vectorfield_topic" value="$(arg vectorfield_topic)"/>
     </include>
