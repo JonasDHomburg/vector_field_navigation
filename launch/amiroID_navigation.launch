@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="amiroID" default="0"/>
-  <arg name="meter_per_pixel" value="0.003"/>
+  <arg name="meter_per_pixel" value="0.006"/>
   <arg name="pixel_mode" value="False"/>
   <arg name="vectorfield_topic" default="merged_all"/>
 
@@ -29,7 +29,7 @@
 
   <!-- Vector Field to Kinematic -->
   <node name="amiro$(arg amiroID)_vectorfield_to_kinematic_node" pkg="vector_field_navigation" type="vectorfield_to_kinematic_node" output="screen" cwd="ROS_HOME">
-    <param name="meter_per_pixel" value="0.003"/>
+    <param name="meter_per_pixel" value="0.006"/>
     <param name="vectorfield_listener_topic" value="/vectorfield/$(arg vectorfield_topic)"/>
     <param name="amiro_odom_listener_topic" value="/amiro$(arg amiroID)/odom" unless="$(arg pixel_mode)"/>
     <param name="amiro_odom_listener_topic" value="/tracking/pixel/$(arg amiroID)" if="$(arg pixel_mode)" />

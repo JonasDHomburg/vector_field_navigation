@@ -1,19 +1,20 @@
 <?xml version="1.0"?>
 <launch>
-    <include file="$(find vector_field_navigation/launch/amiro7_navigation.launch">
+    <include file="$(find vector_field_navigation)/launch/amiro7_navigation.launch">
         <arg name="vectorfield_topic" value="merged_all"/>
     </include>
-    <include file="$(find vector_field_navigation/launch/amiro6_navigation.launch">
+    <include file="$(find vector_field_navigation)/launch/amiro6_navigation.launch">
             <arg name="vectorfield_topic" value="merged_all"/>
     </include>
-    <include file="$(find vector_field_navigation/launch/merge_a_b.launch">
+    <include file="$(find vector_field_navigation)/launch/merge_a_b.launch">
         <arg name="vectorfield_a" value="image"/>
         <arg name="vectorfield_b" value="amiro7"/>
         <arg name="vectorfield_ab" value="image_amiro7"/>
     </include>
-    <include file="$(find vector_field_navigation/launch/merge_a_b.launch">
+    <include file="$(find vector_field_navigation)/launch/merge_a_b.launch">
         <arg name="vectorfield_a" value="image_amiro7"/>
         <arg name="vectorfield_b" value="amiro6"/>
         <arg name="vectorfield_ab" value="merged_all"/>
+        <arg name="as_gridmap" value="True"/>
     </include>
 </launch>

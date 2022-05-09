@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="image_selector" value="True"/>
-  <arg name="image_broadcaster" value="False"/>
-  <arg name="meter_per_pixel" value="0.003"/>
+  <arg name="image_selector" default="True"/>
+  <arg name="image_broadcaster" default="False"/>
+  <arg name="meter_per_pixel" default="0.006"/>
 
   <!-- select a single vector field -->
   <group if="$(arg image_selector)">
