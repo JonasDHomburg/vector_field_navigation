@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="amiroID" default="0"/>
-  <arg name="meter_per_pixel" value="0.006"/>
-  <arg name="pixel_mode" value="False"/>
+  <arg name="meter_per_pixel" default="0.006"/>
+  <arg name="pixel_mode" default="False"/>
   <arg name="vectorfield_topic" default="merged_all"/>
+  <arg name="image_width" default="500"/>
+  <arg name="image_height" default="500"/>
 
   <!-- Odometry to Vector Field -->
   <node name="odom$(arg amiroID)_to_vectorfield_node" pkg="vector_field_navigation" type="odom_to_vectorfield_node" output="screen" cwd="ROS_HOME">
@@ -16,6 +18,8 @@
     <param name="minimum_pose_difference_pixel" value="10.0"/> <?Only recalculate the map if the robot has moved that much?>
     <param name="pixel_mode" value="$(arg pixel_mode)"/> <?If this is true pixelmode is activated otherwhise normal mode (metric)?>
     <param name="target_frame" value="vectorfield"/>
+    <param name="image_width" value="$(arg image_width)"/>
+    <param name="image_height" value="$(arg image_height)"/>
   </node>
 
   <!-- Vector Field to Gridmap -->

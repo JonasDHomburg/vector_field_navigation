@@ -1,8 +1,15 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="vectorfield_topic" default="image"/>
+    <arg name="image_width" default="500"/>
+    <arg name="image_height" default="500"/>
+    <arg name="meter_per_pixel" default="0.006"/>
+
     <include file="$(find vector_field_navigation)/launch/amiroID_navigation.launch">
         <arg name="amiroID" value="7"/>
         <arg name="vectorfield_topic" value="$(arg vectorfield_topic)"/>
+        <arg name="image_width" value="$(arg image_width)"/>
+        <arg name="image_height" value="$(arg image_height)"/>
+        <arg name="meter_per_pixel" value="$(arg meter_per_pixel)"/>
     </include>
 </launch>

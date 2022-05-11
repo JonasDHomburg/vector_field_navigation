@@ -3,11 +3,12 @@
 
   <arg name="vectorfield_a" />
   <arg name="vectorfield_b" />
-  <arg name="image_width" default="1000"/>
-  <arg name="image_height" default="1000"/>
+  <arg name="image_width" default="500"/>
+  <arg name="image_height" default="500"/>
   <arg name="vectorfield_ab" />
   <arg name="as_gridmap" default="False"/>
-  <arg name="meter_per_pixel" value="0.006"/>
+  <arg name="meter_per_pixel" default="0.006"/>
+  <arg name="normalize" default="False"/>
 
   <!-- merge vector field a and b -->
   <node name="vf_merger_$(arg vectorfield_a)_$(arg vectorfield_b)" pkg="vector_field_navigation" type="vectorfield_merger_node" output="screen" cwd="ROS_HOME">
@@ -16,7 +17,7 @@
     <param name="field_width" value="$(arg image_width)"/>
     <param name="field_height" value="$(arg image_height)"/>
     <param name="vectorfield_publisher_topic" value="/vectorfield/$(arg vectorfield_ab)"/>
-    <param name="normalize" value="1"/>
+    <param name="normalize" value="$(arg normalize)"/>
   </node>
 
   <group if="$(arg as_gridmap)">

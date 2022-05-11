@@ -1,17 +1,34 @@
 <?xml version="1.0"?>
 <launch>
+    <arg name="image_width" default="500"/>
+    <arg name="image_height" default="500"/>
+    <arg name="meter_per_pixel" default="0.006"/>
+    <arg name="normalize" default="False"/>
+
     <include file="$(find vector_field_navigation)/launch/amiro7_navigation.launch">
         <arg name="vectorfield_topic" value="merged_all"/>
+        <arg name="image_width" value="$(arg image_width)"/>
+        <arg name="image_height" value="$(arg image_height)"/>
+        <arg name="meter_per_pixel" value="$(arg meter_per_pixel)"/>
     </include>
     <include file="$(find vector_field_navigation)/launch/amiro6_navigation.launch">
-            <arg name="vectorfield_topic" value="merged_all"/>
+        <arg name="vectorfield_topic" value="merged_all"/>
+        <arg name="image_width" value="$(arg image_width)"/>
+        <arg name="image_height" value="$(arg image_height)"/>
+        <arg name="meter_per_pixel" value="$(arg meter_per_pixel)"/>
     </include>
     <include file="$(find vector_field_navigation)/launch/merge_a_b.launch">
+        <arg name="image_width" value="$(arg image_width)"/>
+        <arg name="image_height" value="$(arg image_height)"/>
+        <arg name="meter_per_pixel" value="$(arg meter_per_pixel)"/>
         <arg name="vectorfield_a" value="image"/>
         <arg name="vectorfield_b" value="amiro7"/>
         <arg name="vectorfield_ab" value="image_amiro7"/>
     </include>
     <include file="$(find vector_field_navigation)/launch/merge_a_b.launch">
+        <arg name="image_width" value="$(arg image_width)"/>
+        <arg name="image_height" value="$(arg image_height)"/>
+        <arg name="meter_per_pixel" value="$(arg meter_per_pixel)"/>
         <arg name="vectorfield_a" value="image_amiro7"/>
         <arg name="vectorfield_b" value="amiro6"/>
         <arg name="vectorfield_ab" value="merged_all"/>
