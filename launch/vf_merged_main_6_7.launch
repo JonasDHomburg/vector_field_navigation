@@ -21,6 +21,7 @@
         <arg name="image_width" value="$(arg image_width)"/>
         <arg name="image_height" value="$(arg image_height)"/>
         <arg name="meter_per_pixel" value="$(arg meter_per_pixel)"/>
+        <arg name="normalize" value="$(arg normalize)"/>
         <arg name="vectorfield_a" value="image"/>
         <arg name="vectorfield_b" value="amiro7"/>
         <arg name="vectorfield_ab" value="image_amiro7"/>
@@ -29,6 +30,7 @@
         <arg name="image_width" value="$(arg image_width)"/>
         <arg name="image_height" value="$(arg image_height)"/>
         <arg name="meter_per_pixel" value="$(arg meter_per_pixel)"/>
+        <arg name="normalize" value="$(arg normalize)"/>
         <arg name="vectorfield_a" value="image_amiro7"/>
         <arg name="vectorfield_b" value="amiro6"/>
         <arg name="vectorfield_ab" value="merged_all"/>
