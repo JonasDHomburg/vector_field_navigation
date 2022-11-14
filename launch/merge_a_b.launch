@@ -7,8 +7,8 @@
   <arg name="image_height" default="500"/>
   <arg name="vectorfield_ab" />
   <arg name="as_gridmap" default="False"/>
-  <arg name="meter_per_pixel" default="0.006"/>
-  <arg name="normalize" default="False"/>
+  <arg name="meter_per_pixel" value="0.006"/>
+  <arg name="normalize" default="True"/>
 
   <!-- merge vector field a and b -->
   <node name="vf_merger_$(arg vectorfield_a)_$(arg vectorfield_b)" pkg="vector_field_navigation" type="vectorfield_merger_node" output="screen" cwd="ROS_HOME">
