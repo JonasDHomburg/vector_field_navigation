@@ -46,4 +46,11 @@
     <param name="invert_yaw" value="False"/>
     <param name="target_frame" value="vectorfield"/>
   </node>
+
+  <node name="amiro$(arg amiroID)_odom_to_tf" pkg="dynamic_transform" type="odom_to_tf" output="screen" cwd="ROS_HOME">
+    <param name="ros_listener_odom_topic" value="/amiro$(arg amiroID)/odom"/>
+    <param name="parent_frame" value="citrack/base_link"/>
+    <param name="child_frame" value="amiro$(arg amiroID)/base_link"/>
+    <param name="rostimenow" value="True"/>
+  </node>
 </launch>
